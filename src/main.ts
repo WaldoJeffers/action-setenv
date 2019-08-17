@@ -4,6 +4,7 @@ async function run() {
   try {
     const name = core.getInput('name')
     const value = core.getInput('value')
+    process.stdout.write(process.env.HOME as string)
     core.exportVariable(
       name,
       value.replace(/\$(\w+)/g, envVar =>
