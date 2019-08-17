@@ -9,7 +9,7 @@ async function run() {
     const value = core.getInput('value')
     process.stdout.write(`process.env.HOME: ${stringify(process.env.HOME)}`)
     process.stdout.write(`value: ${stringify(value)}`)
-    const newValue = value.replace(/\$(\w+)/g, envVar => {
+    const newValue = value.replace(/\$(\w+)/g, (_, envVar) => {
       process.stdout.write(`envVar: ${stringify(envVar)}`)
       process.stdout.write(
         `process.env[envVar]: ${stringify(process.env[envVar])}`,
